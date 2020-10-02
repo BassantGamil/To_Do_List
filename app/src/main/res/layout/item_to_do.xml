@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="taskItem"
+            type="com.orp.todolist.model.TaskModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guid_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guid_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guid_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="411dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="32dp" />
+
+
+        <TextView
+            android:id="@+id/name_txt_view_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@{taskItem.getName()}"
+            app:layout_constraintEnd_toEndOf="@id/guid_end"
+            app:layout_constraintStart_toStartOf="@id/guid_start"
+            app:layout_constraintTop_toTopOf="@id/guid_top"
+            tools:text="Name" />
+
+        <TextView
+            android:id="@+id/description_txt_view_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{taskItem.getDescription()}"
+            app:layout_constraintEnd_toEndOf="@id/guid_end"
+            app:layout_constraintStart_toStartOf="@id/guid_start"
+            app:layout_constraintTop_toBottomOf="@id/name_txt_view_item"
+            tools:text="Description" />
+
+        <TextView
+            android:id="@+id/date_txt_view_item"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="@id/guid_end"
+            app:layout_constraintTop_toBottomOf="@id/description_txt_view_item" />
+
+
+        <TextView
+            android:id="@+id/time_txt_view_item"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="end"
+            app:layout_constraintEnd_toStartOf="@id/date_txt_view_item"
+            app:layout_constraintTop_toBottomOf="@id/description_txt_view_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

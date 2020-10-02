@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="411dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="32dp"
+        app:layout_constraintStart_toEndOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/enter_name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/guid_end"
+        app:layout_constraintStart_toStartOf="@id/guid_start"
+        app:layout_constraintTop_toTopOf="@+id/guid_top"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/description"
+        android:inputType="textLongMessage"
+        app:layout_constraintEnd_toEndOf="@+id/guid_end"
+        app:layout_constraintStart_toStartOf="@id/guid_start"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:importantForAutofill="no" />
+
+
+    <TextView
+        android:id="@+id/date_txt_view"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="64dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/add_date_btn"
+        app:layout_constraintStart_toStartOf="@id/guid_start"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
+    <Button
+        android:id="@+id/add_date_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/add_date"
+        android:onClick="onAddClickedDate"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@id/guid_end"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
+    <TextView
+        android:id="@+id/time_txt_view"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="64dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/add_time_btn"
+        app:layout_constraintStart_toStartOf="@id/guid_start"
+        app:layout_constraintTop_toBottomOf="@id/date_txt_view" />
+    <Button
+        android:id="@+id/add_time_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:textAllCaps="false"
+        android:text="@string/add_time"
+        android:onClick="onAddClickedTime"
+        app:layout_constraintEnd_toEndOf="@id/guid_end"
+        app:layout_constraintTop_toBottomOf="@id/add_date_btn" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:textAllCaps="false"
+        android:onClick="onSavedClicked"
+        android:text="@string/save"
+        app:layout_constraintStart_toStartOf="@id/guid_start"
+        app:layout_constraintEnd_toEndOf="@id/guid_end"
+        app:layout_constraintTop_toBottomOf="@id/add_time_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

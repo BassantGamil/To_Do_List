@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">To Do List</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="description">Description</string>
+    <string name="add_date">Add Date</string>
+    <string name="add_time">Add time</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
+
+</resources>
